@@ -1,0 +1,247 @@
+/* =============================================================
+   style.css  -  Add-on stylesheet for the personal webpage
+   Author : Samhitha Kondeti
+
+   Loaded AFTER the <style> block in index.html so the original
+   colors / fonts / layout stay exactly the same.  Everything in
+   this file is purely additive:
+     - Auto-injected nav bar
+     - Dark-mode palette
+     - Floating theme-toggle button
+     - Typing cursor
+     - Collapsible-section transitions
+   ============================================================= */
+
+
+/* ===== 1. AUTO-INJECTED NAV BAR ============================== */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    margin: -20px -20px 30px -20px;     /* hugs the top of the card */
+    padding: 14px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: rgba(80, 0, 0, 0.04);   /* very light maroon tint */
+    border-radius: 50px 50px 0 0;             /* match card top radius */
+}
+
+.site-nav a {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #500000;                            /* original maroon accent */
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover {
+    background-color: #500000;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* ===== 2. THEME TOGGLE BUTTON (top-right floating) =========== */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: #500000;                 /* maroon - matches site */
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+
+/* ===== 3. TYPING CURSOR ====================================== */
+.typing-cursor::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 2px;
+    color: #500000;
+    animation: blink 0.7s steps(2, start) infinite;
+    font-weight: normal;
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+
+/* ===== 4. COLLAPSIBLE SECTIONS =============================== */
+section h2.collapsible {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s ease;
+}
+
+section h2.collapsible:hover {
+    color: #800000;                            /* slightly brighter maroon */
+}
+
+.section-chevron {
+    font-size: 14px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.section-chevron.rotated {
+    transform: rotate(-90deg);
+}
+
+.section-content {
+    overflow: hidden;
+    max-height: 50000px;                       /* large enough for any content */
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.section-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+
+/* ===== 5. DARK MODE ==========================================
+   Activated by adding `dark-mode` class to <body>.
+   Original layout, fonts and the maroon accent are preserved -
+   only background / surface / text colors flip to a dark palette.
+   ============================================================= */
+body.dark-mode {
+    background-color: #1a1a1a;
+    background-image: none;                    /* hide floral pattern */
+    color: #e0e0e0;
+}
+
+body.dark-mode .page-container {
+    background-color: #2a2a2a;
+    border-top-color: #8a3a3a;                 /* lighter maroon for dark bg */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h1 {
+    color: #ffffff;
+}
+
+body.dark-mode h2 {
+    color: #d4a4a4;                            /* soft maroon, readable on dark */
+    border-bottom-color: #444;
+}
+
+body.dark-mode h3,
+body.dark-mode .ed-school,
+body.dark-mode .info-list strong {
+    color: #f0f0f0;
+}
+
+body.dark-mode .subtitle {
+    color: #b0b0b0;
+}
+
+body.dark-mode .subtitle i,
+body.dark-mode .ed-icon {
+    color: #d4a4a4;
+}
+
+body.dark-mode .ed-degree,
+body.dark-mode figcaption {
+    color: #b0b0b0;
+}
+
+body.dark-mode .ed-date {
+    color: #888;
+}
+
+body.dark-mode header {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .info-list li {
+    border-left-color: #444;
+}
+
+body.dark-mode .footer {
+    color: #888;
+    border-top-color: #444;
+}
+
+body.dark-mode a {
+    color: #d4a4a4;
+}
+
+body.dark-mode .profile-photo {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode .video-item,
+body.dark-mode figure.media-item {
+    background-color: #1a1a1a;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Nav bar in dark mode */
+body.dark-mode .site-nav {
+    background-color: rgba(212, 164, 164, 0.08);
+    border-bottom-color: #444;
+}
+
+body.dark-mode .site-nav a {
+    color: #d4a4a4;
+}
+
+body.dark-mode .site-nav a:hover {
+    background-color: #d4a4a4;
+    color: #1a1a1a;
+}
+
+/* Theme toggle in dark mode */
+body.dark-mode #theme-toggle {
+    background-color: #d4a4a4;
+    color: #1a1a1a;
+}
+
+/* Collapsible heading hover in dark mode */
+body.dark-mode section h2.collapsible:hover {
+    color: #f0c8c8;
+}
+
+body.dark-mode .typing-cursor::after {
+    color: #d4a4a4;
+}
+
+
+/* ===== 6. RESPONSIVE TWEAKS (small screens) ================== */
+@media (max-width: 600px) {
+    .site-nav {
+        gap: 4px 8px;
+        padding: 10px;
+    }
+    .site-nav a {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    #theme-toggle {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
