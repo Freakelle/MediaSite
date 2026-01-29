@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samhitha Kondeti - Personal Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Base styles */
+        body {
+        /* Base color */
+        background-color: #f9f9f9;
+        
+        /* Floral Pattern Image */
+        background-image: url('Botanical.avif');
+        
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 40px 20px;
+    
+        }
+
+        /* --- NEW: The Main "Card" Container --- */
+        /* The Main "Card" Container */
+    .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        
+        /* Increased padding so text doesn't touch the curves */
+        padding: 60px; 
+        
+        /* This creates the "Semi-Circle" / Soft edges you wanted */
+        border-radius: 50px; 
+        
+        /* Keeps the elevated shadow */
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+        
+        /* Keeps the Maroon accent */
+        border-top: 6px solid #500000; 
+    }
+
+        /* Header layout */
+        header {
+            border-bottom: 2px solid #eee; /* Lighter divider now that we have the top border */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            overflow: hidden; 
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .profile-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        /* Specific Font Request: Times New Roman for Name */
+        h1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 36px; /* Slightly larger for impact */
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: "Arial", sans-serif;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle i {
+            color: #500000; /* Maroon Icons */
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .subtitle div {
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-family: "Times New Roman", sans-serif;
+            font-size: 22px;
+            color: #500000;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Education List with Icons */
+        .education-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .education-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .ed-icon {
+            padding-top: 5px;
+            margin-right: 15px;
+            color: #500000;
+            font-size: 18px;
+        }
+
+        .ed-details {
+            flex: 1;
+        }
+
+        .ed-school {
+            font-family: "Arial", sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .ed-degree {
+            font-family: "Georgia", serif;
+            font-style: italic;
+            color: #555;
+        }
+
+        .ed-date {
+            float: right;
+            font-family: "Arial", sans-serif;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Standard list for interests */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .info-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #eee;
+        }
+        .info-list strong {
+            color: #333;
+        }
+
+        /* Photo styling */
+        .profile-photo {
+            width: 200px;
+            height: 250px; 
+            object-fit: cover; 
+            border: 1px solid #ccc;
+            padding: 4px;
+            background-color: #fff;
+            float: right; 
+            margin-left: 35px; /* More space for the "Elevated" look */
+            margin-bottom: 10px;
+            /* Stronger shadow for the photo to match the theme */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Video Row Styling */
+        .video-row {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+            justify-content: space-between;
+        }
+
+        .video-item {
+            flex: 1;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .video-item video, .video-item img {
+            width: 100%;
+            height: 220px; 
+            object-fit: cover; 
+            display: block;
+            background-color: #000;
+        }
+
+        figcaption {
+            padding: 10px;
+            font-family: "Arial", sans-serif;
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Annihilation Image Styling */
+        figure.media-item {
+            margin: 25px 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        figure.media-item img {
+            width: 100%;
+            height: 350px; 
+            object-fit: cover; 
+            object-position: center;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        a { color: #500000; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <header>
+            <img src="Profile.jpeg" alt="Samhitha Kondeti" class="profile-photo">
+            
+            <div class="profile-info">
+                <h1>SAMHITHA KONDETI</h1> 
+                
+                <div class="subtitle">
+                    <div>
+                        <i class="fas fa-university"></i> 
+                        Master of Computer Science Student | Texas A&M University
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i> 
+                        <a href="mailto:samk_13@tamu.edu">samk_13@tamu.edu</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        College Station, TX
+                    </div>
+                </div>
+                
+                <h2>Biography</h2>
+                <p>
+                    I am a first year Master's student at <strong> TAMU CSE</strong> with a 4.0 GPA. I received my Bachelor's degree in Computer Science from NIT Durgapur. My current research interests are 
+                    in <strong>AI in Quantum Computing and Post-Quantum Cybersecurity</strong>. I have also been invested in Machine Learning, where I implemented Graph Neural Networks on PyTorch Geometrics while working on the Detection of Hardware Trojans.
+                </p> 
+                    
+                <p> 
+                  <strong>Why CSCE 656 Computers and New Media:</strong> Being a CS student, I believe it is essential to include 
+                  an element of creativity in every application we build. I am personally attracted to adding that touch of 
+                  new interaction levels for users in everything I develop. This course on Computers and New Media will help me understand how the implementation of media affects 
+                  user experience, bridging the gap between my technical backend skills and user-centric design.
+                </p>   
+
+                <h3>Studies</h3>
+                <ul class="education-list">
+                    <li class="education-item">
+                        <div class="ed-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="ed-details">
+                            <div class="ed-school">Texas A&M University <span class="ed-date">2025 - Present</span></div>
+                            <div class="ed-degree">Master of Computer Science</div>
+                        </div>
+                    </li>
+                    <li class="education-item">
+                        <div class="ed-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="ed-details">
+                            <div class="ed-school">National Institute of Technology, Durgapur <span class="ed-date">2020 - 2024</span></div>
+                            <div class="ed-degree">B.Tech in Computer Science and Engineering</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>Interests</h3>
+                <ul class="info-list">
+                    <li><strong>Research Areas:</strong> Quantum Algorithms, Machine Learning, Cybersecurity, Hardware Security, and GNNs.</li>
+                    <li><strong>Personal:</strong> Sudoku, Solving puzzles, Movie critic, Singing, and Yoga.</li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="consumption">
+            <h2>Media Consumption at My Level</h2>
+            <p>
+                I’m a very diverse person; therefore, my consumption level on a daily basis starts from my cellphone, Gmail, 
+                newspaper, and smart speakers, and ends at night with a Galaxy robot.
+            </p>
+
+            <h3>Delving into each segment:</h3>
+            <p>
+                My interest and attention are mostly grasped by <strong>Sci-Fi movies</strong> and extensively by <strong>Virtual Reality</strong> 
+                (such as Vision Pro devices), which deal with merging digital content with physical reality.
+            </p>
+
+            <h3>Moving Images & Animation</h3>
+            <p>
+              Take <strong>Disney animated movies</strong> for instance. Their evolution aligns with what Janet Murray describes 
+              in <em>Hamlet on the Holodeck</em> as the <strong>spatial</strong> and <strong>procedural</strong> power of the digital medium. 
+              By shifting to the <strong>Computer Animation Production System (CAPS)</strong>, Disney moved beyond the flat, static nature 
+              of traditional cel animation into a navigable virtual space. This proprietary software allowed for a 
+              <strong>multiplane virtual camera</strong> that could move deeply into the scene, creating an immersive "digital environment" 
+              that replaced the "fourth wall" with a sense of spatial participation. The software's <strong>encyclopedic</strong> capacity 
+              enabled unlimited color palettes and complex lighting, fulfilling the computer's promise to expand the boundaries 
+              of storytelling through technical precision.
+            </p>
+
+            <div class="video-row">
+              <div class="video-item">
+                  <video controls>
+                      <source src="Disney2.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <figcaption>Fig 1. Animation of Beauty and the Beast.</figcaption>
+              </div>
+
+              <div class="video-item">
+                  <video controls>
+                      <source src="Disney1.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <figcaption>Fig 2. The beauty in Digital Animation.</figcaption>
+              </div>
+          </div>
+
+            <p>
+              Similarly, the sci-fi film <em>Annihilation</em> functions as a cinematic "Holodeck"—a simulation so total that 
+              it blurs the line between the physical and the digital. The film's "Shimmer" was created using 
+              <strong>procedural generation</strong> tools like <strong>Houdini</strong> and <strong>Mandelbulb 3D</strong>, which leverage the computer's 
+              ability to execute complex rule-based algorithms (procedurality) rather than manual sculpting. 
+              These fractals were composited in <strong>Nuke</strong> with LIDAR scans of real environments, creating a 
+              liminal space that feels biologically real yet mathematically impossible. This exemplifies Murray's vision of 
+              the computer as an "enchanted" medium that can actively create belief, immersing the audience in an altered 
+              realm of reality.
+            </p>
+            
+            <figure class="media-item">
+              <img src="Annihilation.jpeg" alt="Annihilation Movie">
+              <figcaption>Fig 3. Annihilation Movie Scene where it blurs the physical and digital world. </figcaption>
+            </figure>
+        </section>
+
+        <section id="generation">
+            <h2>Media Generation at My Level</h2>
+            <p>
+                As a Master’s student, my transition from consumer to creator is defined by what Janet Murray calls <strong>procedural authorship</strong>. I do not simply generate static content; I architect systems that function as "active creation." My research in <strong>Hardware Security</strong> involves generating <strong>Graph Neural Networks (GNNs)</strong>, where I transform raw code into <strong>Abstract Syntax Trees (ASTs)</strong>. This process turns linear data into a <strong>spatial</strong> map of logic, allowing me to "navigate" the vulnerabilities of a microchip much like a navigable digital environment.
+            </p>
+            <p>
+                Beyond code, I utilize <strong>LaTeX</strong> to generate the rigid, standardized media of the scientific community. Here, the challenge is translating the fluid, probabilistic nature of <strong>Quantum Algorithms</strong> and AI into the fixed, linear format of a research paper. This duality—between writing dynamic code that <em>executes</em> rules (procedural) and writing static papers that <em>explain</em> them—forms the core of my identity as a technical creator.
+            </p>
+            
+            <p>
+                <strong>Future Vision: The Cyber Quantum Game Space</strong><br>
+                Currently, I am ideating a <strong>'Cyber Quantum Game Space,'</strong> a project that embodies the ultimate promise of the digital medium. Inspired by the 'Holodeck's' ability to simulate alternative laws of physics, I envision a virtual environment where <strong>Quantum Mechanics</strong> (superposition, entanglement) dictates the procedural rules of the world, and <strong>Cybersecurity</strong> protocols form the narrative conflict. This would not just be a game, but a <strong>spatialized simulation</strong> of my research, transforming abstract mathematical cipher ensembles into a navigable, interactive experience.
+            </p>
+
+            <div class="video-row">
+                <div class="video-item">
+                    <img src="Humanq.jpeg" alt="Quantum Visualization">
+                    <figcaption>Fig 4. Visualizing human in a Quantum World.</figcaption>
+                </div>
+
+                <div class="video-item">
+                    <img src="Humanqm.jpeg" alt="Cyber Structure Visualization">
+                    <figcaption>Fig 5. Quantum World.</figcaption>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <h2>Challenges Based on Software Side</h2>
+            <p>
+                As software capability grows, the challenges shift from "can we do this?" to "can we compute this in real-time?"
+            </p>
+
+            <h3>1. Directability vs. Proceduralism Trade-off (VFX)</h3>
+            <p>
+                In modern media generation (like the <em>Annihilation</em> "Shimmer" or modern Disney water/fire effects), the software challenge is no longer manual drawing, but <strong>controlling algorithmic chaos</strong>. Tools like <strong>Houdini</strong> use node-based procedural generation to create millions of particles. The "latest" challenge is <strong>Artistic Directability</strong>: changing one variable in a fractal algorithm can completely break the visual composition. Software engineers now struggle to build "guide rails" that allow directors to control these massive, mathematically generated simulations without breaking the underlying physics engine.
+            </p>
+
+            <h3>2. Compilation Latency in Cloud LaTeX</h3>
+            <p>
+                While LaTeX itself is stable, the modern challenge is in <strong>Cloud-Based Compilation</strong> (e.g., Overleaf).
+            </p>
+            <ul>
+                <li><strong>Time-Out Errors:</strong> Modern research papers rely heavily on <strong>TikZ</strong> and <strong>PGFPlots</strong> for generating graphs (like my GNN visualizations) directly in code. This places an immense burden on the compiler. The challenge is that the single-pass compilation process of LaTeX often hits "Time Out" limits on cloud servers before complex vector graphics can render.</li>
+                <li><strong>The "Static vs. Responsive" Gap:</strong> As media moves to mobile/web, LaTeX's rigid PDF output is becoming a liability. The current software challenge is developing transpilers that can convert semantic LaTeX equations into responsive <strong>HTML5/MathJax</strong> without losing formatting—a problem that is still not fully solved.</li>
+            </ul>
+
+            <h3>3. Quantum Simulation</h3>
+            <p>
+                For my <strong>Cyber-Quantum Game Space</strong>, the software bottleneck is the <strong>Memory Wall</strong>.
+            </p>
+            <p>
+                Simulating quantum mechanics on a classical computer (the game engine) faces an exponential hurdle. To simulate just <strong>n</strong> qubits, the software must store <strong>2<sup>n</sup></strong> complex coefficients.
+                <br><em>The Challenge:</em> A game with just 50 quantum variables would require petabytes of RAM, which is impossible for a user's device. I am currently facing the challenge of writing a <strong>"Sparse State Vector" algorithm</strong>—a software technique that discards near-zero probabilities to approximate the quantum state, trading a tiny margin of accuracy for the ability to run the game in real-time.
+            </p>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 Samhitha Kondeti. Created for CSCE 655.
+        </div>
+    
+    </div> </body>
+</html>
